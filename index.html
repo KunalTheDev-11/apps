@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kunal Apps - Privacy Policies</title>
+<title>KunalTheDev Apps - Privacy Policies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -12,97 +14,429 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#f4f7fb;
-color:#333;
+
+background:linear-gradient(-45deg,#4f46e5,#6d28d9,#2563eb,#9333ea);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+overflow-x:hidden;
+color:white;
+
 }
 
+/* Animated Background */
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+/* Floating Blobs */
+
+.blob{
+position:fixed;
+border-radius:50%;
+filter:blur(90px);
+opacity:.35;
+animation:float 12s ease-in-out infinite;
+z-index:-1;
+}
+
+.blob1{
+width:320px;
+height:320px;
+background:#ff00cc;
+top:-100px;
+left:-80px;
+}
+
+.blob2{
+width:400px;
+height:400px;
+background:#00e5ff;
+bottom:-100px;
+right:-80px;
+animation-delay:4s;
+}
+
+.blob3{
+width:250px;
+height:250px;
+background:#ffb300;
+top:40%;
+left:50%;
+animation-delay:2s;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0) translateX(0);
+}
+
+50%{
+transform:translateY(-40px) translateX(20px);
+}
+
+}
+
+/* Header */
+
 header{
-background:linear-gradient(135deg,#4f46e5,#7c3aed);
-color:white;
-padding:70px 20px;
+
+padding:90px 20px;
 text-align:center;
+animation:fadeDown 1s;
+
 }
 
 header h1{
-font-size:45px;
-margin-bottom:10px;
+
+font-size:60px;
+margin-bottom:15px;
+text-shadow:0 5px 25px rgba(0,0,0,.3);
+
 }
 
 header p{
-font-size:18px;
+
+font-size:20px;
 opacity:.9;
+
 }
 
 .container{
+
 max-width:1200px;
 margin:auto;
 padding:50px 20px;
+
 }
 
-h2{
-margin-bottom:30px;
+.container h2{
+
 text-align:center;
-color:#4f46e5;
+margin-bottom:40px;
+font-size:38px;
+
 }
+
+/* Cards */
 
 .grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+
 }
 
 .card{
-background:white;
-border-radius:15px;
-padding:30px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
+
+position:relative;
+overflow:hidden;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:35px;
+
+border-radius:25px;
+
+transition:.45s;
+
+box-shadow:0 10px 35px rgba(0,0,0,.2);
+
+animation:fadeUp 1s ease forwards;
+
+opacity:0;
+
 }
+
+.card:nth-child(1){animation-delay:.2s;}
+.card:nth-child(2){animation-delay:.5s;}
+.card:nth-child(3){animation-delay:.8s;}
 
 .card:hover{
-transform:translateY(-8px);
+
+transform:translateY(-15px) scale(1.04);
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
 }
 
+/* Shine Animation */
+
+.card::before{
+
+content:'';
+
+position:absolute;
+
+top:-100%;
+
+left:-60%;
+
+width:60%;
+
+height:250%;
+
+background:rgba(255,255,255,.25);
+
+transform:rotate(25deg);
+
+transition:.8s;
+
+}
+
+.card:hover::before{
+
+left:150%;
+
+}
+
+/* Icon */
+
 .icon{
-font-size:60px;
-margin-bottom:15px;
+
+font-size:65px;
+
+margin-bottom:20px;
+
+animation:bounce 3s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
 }
 
 .card h3{
+
 margin-bottom:15px;
-color:#4f46e5;
+
+font-size:28px;
+
 }
 
 .card p{
-margin-bottom:25px;
-line-height:1.7;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+opacity:.9;
+
 }
 
+/* Button */
+
 .btn{
+
 display:inline-block;
-padding:12px 22px;
-background:#4f46e5;
-color:white;
+
+padding:14px 28px;
+
+border-radius:50px;
+
 text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-transition:.3s;
+
+font-weight:600;
+
+background:linear-gradient(135deg,#ffffff,#ddddff);
+
+color:#4f46e5;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::after{
+
+content:'';
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:100%;
+
+height:100%;
+
+background:rgba(255,255,255,.4);
+
+transform:skewX(-25deg);
+
+transition:.6s;
+
+}
+
+.btn:hover::after{
+
+left:130%;
+
 }
 
 .btn:hover{
-background:#372fd9;
+
+transform:scale(1.08);
+
+box-shadow:0 10px 25px rgba(255,255,255,.35);
+
 }
 
+/* Footer */
+
 footer{
-background:#222;
-color:white;
+
+margin-top:80px;
+
+padding:45px;
+
 text-align:center;
-padding:30px;
-margin-top:60px;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(20px);
+
+border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+footer h3{
+
+margin-bottom:12px;
+
+font-size:28px;
+
+}
+
+footer p{
+
+opacity:.8;
+
+margin-top:8px;
+
+}
+
+/* Animations */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Floating Particles */
+
+.particle{
+
+position:fixed;
+
+width:8px;
+
+height:8px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.3;
+
+animation:particle 18s linear infinite;
+
+z-index:-1;
+
+}
+
+@keyframes particle{
+
+0%{
+
+transform:translateY(100vh) scale(0);
+
+}
+
+100%{
+
+transform:translateY(-100px) scale(1.5);
+
+}
+
+}
+
+@media(max-width:700px){
+
+header h1{
+
+font-size:42px;
+
+}
+
+.container h2{
+
+font-size:30px;
+
+}
+
 }
 
 </style>
@@ -111,11 +445,39 @@ margin-top:60px;
 
 <body>
 
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<script>
+
+for(let i=0;i<40;i++){
+
+let p=document.createElement("div");
+
+p.className="particle";
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.animationDuration=(10+Math.random()*15)+"s";
+
+p.style.animationDelay=Math.random()*15+"s";
+
+p.style.width=p.style.height=(3+Math.random()*8)+"px";
+
+document.body.appendChild(p);
+
+}
+
+</script>
+
 <header>
 
-<h1>KunalTheDev Apps</h1>
+<h1>🚀 KunalTheDev Apps</h1>
 
-<p>Privacy Policies for all Android applications developed by KunalTheDev.</p>
+<p>
+Privacy Policies for all Android applications developed by KunalTheDev.
+</p>
 
 </header>
 
@@ -132,20 +494,14 @@ margin-top:60px;
 <h3>LyricFlow</h3>
 
 <p>
-
-An all-in-one lyrics application for discovering, searching, and viewing song lyrics.
-
+An all-in-one lyrics application for discovering, searching, and viewing song lyrics with a beautiful user experience.
 </p>
 
 <a class="btn" href="privacy/lyricflow.html">
-
 View Privacy Policy
-
 </a>
 
 </div>
-
-<!-- Future Apps -->
 
 <div class="card">
 
@@ -154,15 +510,11 @@ View Privacy Policy
 <h3>Coming Soon</h3>
 
 <p>
-
-Privacy policy for future applications will appear here.
-
+Privacy policies for upcoming Android applications will automatically appear here as more apps are released.
 </p>
 
 <a class="btn" href="#">
-
 Coming Soon
-
 </a>
 
 </div>
@@ -174,15 +526,11 @@ Coming Soon
 <h3>More Apps</h3>
 
 <p>
-
-As new Android apps are released, their privacy policies will be listed here.
-
+Stay tuned! More exciting Android applications and their privacy policies will be added in future updates.
 </p>
 
 <a class="btn" href="#">
-
 Coming Soon
-
 </a>
 
 </div>
@@ -193,11 +541,11 @@ Coming Soon
 
 <footer>
 
-<h3>Kunal Apps</h3>
+<h3>KunalTheDev Apps</h3>
 
-<p>Developer of Android Applications</p>
+<p>Developer of Modern Android Applications</p>
 
-<p>© 2026 Kunal Apps. All Rights Reserved.</p>
+<p>© 2026 KunalTheDev Apps. All Rights Reserved.</p>
 
 </footer>
 
