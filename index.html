@@ -4,36 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KunalTheDev Apps</title>
+<!-- Optimized Font Loading -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root{--a:#6d28d9;--b:#2563eb;--glass:rgba(255,255,255,.12)}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
 html{scroll-behavior:smooth}
-body{overflow-x:hidden;color:#fff;background:linear-gradient(-45deg,#4f46e5,#6d28d9,#2563eb,#9333ea);background-size:400% 400%;animation:bg 14s ease infinite}
+/* Hardware acceleration forced with transform */
+body{overflow-x:hidden;color:#fff;background:linear-gradient(-45deg,#4f46e5,#6d28d9,#2563eb,#9333ea);background-size:400% 400%;animation:bg 14s ease infinite;transform:translateZ(0)}
 @keyframes bg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
-.bg,.bg:before,.bg:after{content:"";position:fixed;border-radius:50%;filter:blur(90px);z-index:-2;animation:f 14s ease-in-out infinite}
-.bg{width:340px;height:340px;background:#ff00cc;left:-120px;top:-100px}
-.bg:before{width:420px;height:420px;background:#00d4ff;right:-55vw;bottom:-20vh}
-.bg:after{width:260px;height:260px;background:#ffd000;left:45vw;top:45vh}
+/* Compositor-only background animations using transform instead of left/top */
+.bg,.bg:before,.bg:after{content:"";position:fixed;border-radius:50%;filter:blur(90px);z-index:-2;animation:f 14s ease-in-out infinite;will-change:transform}
+.bg{width:340px;height:340px;background:#ff00cc;transform:translate(-120px,-100px)}
+.bg:before{width:420px;height:420px;background:#00d4ff;transform:translate(55vw,80vh)}
+.bg:after{width:260px;height:260px;background:#ffd000;transform:translate(45vw,45vh)}
 @keyframes f{50%{transform:translate(40px,-40px) scale(1.1)}}
 header{min-height:70vh;display:grid;place-items:center;text-align:center;padding:30px}
 h1{font-size:clamp(2.6rem,7vw,4.8rem)}
 .lead{max-width:700px;opacity:.9;margin:18px auto;line-height:1.7}
-.hero-btn,.btn{display:inline-block;border-radius:999px;text-decoration:none;font-weight:700;transition:.3s}
+.hero-btn,.btn{display:inline-block;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .3s,box-shadow .3s;will-change:transform}
 .hero-btn{margin-top:24px;padding:14px 28px;background:#fff;color:#4f46e5}
 .hero-btn:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 .wrap{max-width:1200px;margin:auto;padding:60px 20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
-.card{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:30px;transition:transform .35s,box-shadow .35s;position:relative;overflow:hidden;will-change:transform}
+.card{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:30px;transition:transform .15s ease-out,box-shadow .35s;position:relative;overflow:hidden;will-change:transform}
 .card:hover{box-shadow:0 20px 50px rgba(0,0,0,.35)}
-.card:before{content:"";position:absolute;left:-70%;top:-120%;width:50%;height:260%;background:rgba(255,255,255,.25);transform:rotate(25deg);transition:.8s}
-.card:hover:before{left:160%}
+/* Optimized tilt transformation performance */
+.card:before{content:"";position:absolute;left:-70%;top:-120%;width:50%;height:260%;background:rgba(255,255,255,.25);transform:rotate(25deg);transition:transform .8s ease;will-change:transform}
+.card:hover:before{transform:translate(460%,0) rotate(25deg)}
 .icon{font-size:3.2rem}
 .btn{margin-top:18px;padding:12px 22px;background:linear-gradient(135deg,#fff,#dbeafe);color:#4338ca}
 footer{text-align:center;padding:40px;background:rgba(0,0,0,.22);margin-top:60px}
-.p{position:fixed;border-radius:50%;background:#fff;opacity:.25;z-index:-1;animation:r linear infinite}
+/* Particle optimizations using transform instead of top/left layout triggers */
+.p{position:fixed;top:0;left:0;border-radius:50%;background:#fff;opacity:.25;z-index:-1;animation:r linear infinite;will-change:transform}
 @keyframes r{from{transform:translateY(105vh)}to{transform:translateY(-10vh)}}
 </style>
 </head>
@@ -49,10 +54,33 @@ footer{text-align:center;padding:40px;background:rgba(0,0,0,.22);margin-top:60px
 </div></section>
 <footer><h3>KunalTheDev Apps</h3><p>Developer of Android Applications</p><p>© 2026 KunalTheDev Apps. All Rights Reserved.</p></footer>
 <script>
-for(let i=0;i<90;i++){const e=document.createElement('div');e.className='p';const s=2+Math.random()*6;e.style.width=e.style.height=s+'px';e.style.left=Math.random()*100+'vw';e.style.animationDuration=(8+Math.random()*12)+'s';e.style.animationDelay=(Math.random()*10)+'s';document.body.appendChild(e);}
+// Efficient Document Fragment batch-insertion for particles
+const f=document.createDocumentFragment();
+for(let i=0;i<45;i++){
+const e=document.createElement('div');e.className='p';const s=2+Math.random()*6;
+e.style.width=e.style.height=s+'px';
+e.style.transform=`translate(${Math.random()*100}vw,105vh)`;
+e.style.animationDuration=(8+Math.random()*12)+'s';
+e.style.animationDelay=(Math.random()*10)+'s';
+f.appendChild(e);
+}
+document.body.appendChild(f);
+
+// Throttled mouse tracking using requestAnimationFrame to prevent lagging
 document.querySelectorAll('.card').forEach(c=>{
-c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;c.style.transform=`perspective(800px) rotateX(${-y/18}deg) rotateY(${x/18}deg) translateY(-8px)`;});
-c.addEventListener('mouseleave',()=>c.style.transform='');
+let a=null;
+c.addEventListener('mousemove',e=>{
+if(a)return;
+a=requestAnimationFrame(()=>{
+const r=c.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;
+c.style.transform=`perspective(800px) rotateX(${-y/18}deg) rotateY(${x/18}deg) translateY(-8px)`;
+a=null;
+});
+},{passive:true});
+c.addEventListener('mouseleave',()=>{
+if(a){cancelAnimationFrame(a);a=null;}
+c.style.transform='';
+});
 });
 </script>
 </body></html>
