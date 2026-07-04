@@ -202,16 +202,24 @@ footer p { color:var(--text-muted); font-size:0.9rem; line-height:1.6; }
 
 /* Micro particle optimization tracking items */
 .p {
-  position:fixed;
-  top:0;
-  left:0;
-  border-radius:50%;
-  background:#fff;
-  opacity:0.15;
-  z-index:-1;
-  animation:r linear infinite;
-  will-change:transform;
-  pointer-events:none;
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  pointer-events: none;
+  z-index: -1;
+  animation: float linear infinite;
+  will-change: transform;
+}
+
+@keyframes float {
+  from {
+    transform: translate3d(var(--x), 105vh, 0);
+  }
+  to {
+    transform: translate3d(var(--x), -10vh, 0);
+  }
 }
 @keyframes r{from{transform:translateY(105vh)}to{transform:translateY(-10vh)}}
 </style>
@@ -266,17 +274,32 @@ footer p { color:var(--text-muted); font-size:0.9rem; line-height:1.6; }
 <script>
 // High-efficiency layout particle background generator
 const frag = document.createDocumentFragment();
-const particleCount = window.innerWidth < 768 ? 20 : 40; // Context-aware optimization
-for(let i=0; i<particleCount; i++){
-  const e = document.createElement('div');
-  e.className = 'p';
-  const size = 2 + Math.random() * 4;
-  e.style.width = e.style.height = size + 'px';
-  e.style.transform = `translate(${Math.random() * 100}vw, 105vh)`;
-  e.style.animationDuration = (10 + Math.random() * 15) + 's';
-  e.style.animationDelay = (Math.random() * 10) + 's';
-  frag.appendChild(e);
+const particleCount = window.innerWidth < 768 ? 20 : 40;
+
+for (let i = 0; i < particleCount; i++) {
+    const p = document.createElement("div");
+    p.className = "p";
+
+    const size = 2 + Math.random() * 5;
+
+    p.style.width = size + "px";
+    p.style.height = size + "px";
+
+    // Store X position in a CSS variable
+    p.style.setProperty("--x", `${Math.random() * 100}vw`);
+
+    // Random opacity
+    p.style.opacity = 0.05 + Math.random() * 0.25;
+
+    // Random duration
+    p.style.animationDuration = `${12 + Math.random() * 12}s`;
+
+    // Random delay
+    p.style.animationDelay = `${Math.random() * 12}s`;
+
+    frag.appendChild(p);
 }
+
 document.body.appendChild(frag);
 
 // Super smooth modern Spotlight hover effect matrix tracking
