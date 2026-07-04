@@ -4,83 +4,308 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KunalTheDev Apps</title>
-<!-- Optimized Font Loading -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<!-- High-Performance Critical Resource Hints -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
-:root{--a:#6d28d9;--b:#2563eb;--glass:rgba(255,255,255,.12)}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+:root {
+  --primary: #6366f1;
+  --primary-glow: rgba(99, 102, 241, 0.15);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 html{scroll-behavior:smooth}
-/* Hardware acceleration forced with transform */
-body{overflow-x:hidden;color:#fff;background:linear-gradient(-45deg,#4f46e5,#6d28d9,#2563eb,#9333ea);background-size:400% 400%;animation:bg 14s ease infinite;transform:translateZ(0)}
-@keyframes bg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
-/* Compositor-only background animations using transform instead of left/top */
-.bg,.bg:before,.bg:after{content:"";position:fixed;border-radius:50%;filter:blur(90px);z-index:-2;animation:f 14s ease-in-out infinite;will-change:transform}
-.bg{width:340px;height:340px;background:#ff00cc;transform:translate(-120px,-100px)}
-.bg:before{width:420px;height:420px;background:#00d4ff;transform:translate(55vw,80vh)}
-.bg:after{width:260px;height:260px;background:#ffd000;transform:translate(45vw,45vh)}
-@keyframes f{50%{transform:translate(40px,-40px) scale(1.1)}}
-header{min-height:70vh;display:grid;place-items:center;text-align:center;padding:30px}
-h1{font-size:clamp(2.6rem,7vw,4.8rem)}
-.lead{max-width:700px;opacity:.9;margin:18px auto;line-height:1.7}
-.hero-btn,.btn{display:inline-block;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .3s,box-shadow .3s;will-change:transform}
-.hero-btn{margin-top:24px;padding:14px 28px;background:#fff;color:#4f46e5}
-.hero-btn:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
-.wrap{max-width:1200px;margin:auto;padding:60px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
-.card{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:30px;transition:transform .15s ease-out,box-shadow .35s;position:relative;overflow:hidden;will-change:transform}
-.card:hover{box-shadow:0 20px 50px rgba(0,0,0,.35)}
-/* Optimized tilt transformation performance */
-.card:before{content:"";position:absolute;left:-70%;top:-120%;width:50%;height:260%;background:rgba(255,255,255,.25);transform:rotate(25deg);transition:transform .8s ease;will-change:transform}
-.card:hover:before{transform:translate(460%,0) rotate(25deg)}
-.icon{font-size:3.2rem}
-.btn{margin-top:18px;padding:12px 22px;background:linear-gradient(135deg,#fff,#dbeafe);color:#4338ca}
-footer{text-align:center;padding:40px;background:rgba(0,0,0,.22);margin-top:60px}
-/* Particle optimizations using transform instead of top/left layout triggers */
-.p{position:fixed;top:0;left:0;border-radius:50%;background:#fff;opacity:.25;z-index:-1;animation:r linear infinite;will-change:transform}
+body {
+  overflow-x:hidden;
+  color:var(--text-main);
+  background:#09090b; /* True premium dark background base */
+  background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #09090b 70%);
+  position:relative;
+  min-height:100vh;
+}
+/* Hardware-accelerated ambient glowing mesh blobs */
+.bg-glow {
+  position:fixed;
+  width:600px;
+  height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.05) 50%, transparent 100%);
+  filter:blur(80px);
+  z-index:-2;
+  top:-200px;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+header {
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  position:relative;
+}
+.header-content {
+  max-width:840px;
+  z-index:2;
+}
+/* Premium badge styling */
+.badge {
+  display:inline-flex;
+  align-items:center;
+  padding:6px 16px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:999px;
+  font-size:0.85rem;
+  font-weight:500;
+  color:var(--primary);
+  margin-bottom:28px;
+  letter-spacing:0.5px;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,0.05);
+}
+h1 {
+  font-size:clamp(2.8rem, 7.5vw, 5rem);
+  font-weight:700;
+  line-height:1.1;
+  background:linear-gradient(to right, #ffffff, #c7d2fe, #818cf8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:-1px;
+}
+.lead {
+  font-size:clamp(1rem, 2.5vw, 1.25rem);
+  color:var(--text-muted);
+  max-width:680px;
+  margin:24px auto;
+  line-height:1.75;
+}
+.hero-btn, .btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.95rem;
+  transition:all .25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change:transform;
+}
+.hero-btn {
+  padding:16px 36px;
+  background:#fff;
+  color:#09090b;
+  box-shadow:0 10px 30px var(--primary-glow);
+}
+.hero-btn:hover {
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(99, 102, 241, 0.3);
+}
+.wrap {
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+h2 {
+  font-size:2.2rem;
+  font-weight:700;
+  letter-spacing:-0.5px;
+  margin-bottom:40px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:32px;
+}
+/* Cyber glassmorphism layout card container */
+.card {
+  background:var(--glass);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--glass-border);
+  border-radius:24px;
+  padding:40px 32px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  transition:border-color .3s, box-shadow .3s;
+  position:relative;
+  overflow:hidden;
+  will-change:transform;
+}
+.card:hover {
+  border-color:rgba(99, 102, 241, 0.3);
+  box-shadow:0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+/* Modern radial dynamic interactive hover shimmer replacement */
+.card:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255,255,255,0.06), transparent 40%);
+  z-index:1;
+  pointer-events:none;
+}
+.icon {
+  font-size:2.5rem;
+  width:64px;
+  height:64px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  margin-bottom:24px;
+}
+.card h3 {
+  font-size:1.4rem;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.card p {
+  color:var(--text-muted);
+  line-height:1.6;
+  font-size:0.95rem;
+  flex-grow:1;
+}
+.btn {
+  margin-top:28px;
+  padding:12px 24px;
+  width:100%;
+  background:rgba(255,255,255,0.05);
+  color:var(--text-main);
+  border:1px solid var(--glass-border);
+}
+.btn:hover {
+  background:#fff;
+  color:#09090b;
+  transform:translateY(-2px);
+}
+/* Disabled style variant for unreleased items */
+.card.disabled { opacity:0.65; }
+.card.disabled .btn { pointer-events:none; background:transparent; color:var(--text-muted); }
+
+footer {
+  text-align:center;
+  padding:60px 20px;
+  background:#040405;
+  border-top:1px solid var(--glass-border);
+  margin-top:100px;
+}
+footer h3 { font-size:1.2rem; margin-bottom:8px; font-weight:600; }
+footer p { color:var(--text-muted); font-size:0.9rem; line-height:1.6; }
+
+/* Micro particle optimization tracking items */
+.p {
+  position:fixed;
+  top:0;
+  left:0;
+  border-radius:50%;
+  background:#fff;
+  opacity:0.15;
+  z-index:-1;
+  animation:r linear infinite;
+  will-change:transform;
+  pointer-events:none;
+}
 @keyframes r{from{transform:translateY(105vh)}to{transform:translateY(-10vh)}}
 </style>
 </head>
 <body>
-<div class="bg"></div>
-<header><div><h1>🚀 KunalTheDev Apps</h1><p class="lead">Privacy Policies for all Android applications developed by KunalTheDev. Modern, fast, responsive, and designed for a premium experience.</p><a class="hero-btn" href="#apps">Explore Apps</a></div></header>
-<section class="wrap" id="apps">
-<h2 style="text-align:center;margin-bottom:30px">Available Applications</h2>
-<div class="grid">
-<div class="card"><div class="icon">📝</div><h3>Distill</h3><p>An all-in-one voice inbox application for taking notes, organizing tasks, and viewing them in a nice, organized and appealing way.</p><a class="btn" href="privacy/distill.html">View Privacy Policy</a></div>
-<div class="card"><div class="icon">📱</div><h3>Coming Soon</h3><p>Privacy policy for future applications will appear here.</p><a class="btn" href="#">Coming Soon</a></div>
-<div class="card"><div class="icon">🚀</div><h3>More Apps</h3><p>As new Android apps are released, their privacy policies will be listed here.</p><a class="btn" href="#">Coming Soon</a></div>
-</div></section>
-<footer><h3>KunalTheDev Apps</h3><p>Developer of Android Applications</p><p>© 2026 KunalTheDev Apps. All Rights Reserved.</p></footer>
-<script>
-// Efficient Document Fragment batch-insertion for particles
-const f=document.createDocumentFragment();
-for(let i=0;i<45;i++){
-const e=document.createElement('div');e.className='p';const s=2+Math.random()*6;
-e.style.width=e.style.height=s+'px';
-e.style.transform=`translate(${Math.random()*100}vw,105vh)`;
-e.style.animationDuration=(8+Math.random()*12)+'s';
-e.style.animationDelay=(Math.random()*10)+'s';
-f.appendChild(e);
-}
-document.body.appendChild(f);
 
-// Throttled mouse tracking using requestAnimationFrame to prevent lagging
-document.querySelectorAll('.card').forEach(c=>{
-let a=null;
-c.addEventListener('mousemove',e=>{
-if(a)return;
-a=requestAnimationFrame(()=>{
-const r=c.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;
-c.style.transform=`perspective(800px) rotateX(${-y/18}deg) rotateY(${x/18}deg) translateY(-8px)`;
-a=null;
-});
-},{passive:true});
-c.addEventListener('mouseleave',()=>{
-if(a){cancelAnimationFrame(a);a=null;}
-c.style.transform='';
-});
+<div class="bg-glow"></div>
+
+<header>
+  <div class="header-content">
+    <div class="badge">🚀 Developer Portfolio</div>
+    <h1>KunalTheDev Apps</h1>
+    <p class="lead">Privacy Policies for Android applications engineered by KunalTheDev. Fast, compliant, modern, and dedicated to a premium user experience.</p>
+    <a class="hero-btn" href="#apps">Explore Applications</a>
+  </div>
+</header>
+
+<section class="wrap" id="apps">
+  <h2 style="text-align:center;">Available Applications</h2>
+  <div class="grid">
+    
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Distill</h3>
+      <p>An all-in-one voice inbox application for taking notes, organizing tasks, and viewing them in a beautifully structured layout.</p>
+      <a class="btn" href="privacy/distill.html">View Privacy Policy</a>
+    </div>
+    
+    <div class="card disabled">
+      <div class="icon">📱</div>
+      <h3>Coming Soon</h3>
+      <p>Privacy policies and product insights for future mobile tools and platforms will appear here.</p>
+      <a class="btn" href="#">Under Development</a>
+    </div>
+    
+    <div class="card disabled">
+      <div class="icon">🤖</div>
+      <h3>More Apps</h3>
+      <p>As additional native Android ecosystems launch, their respective terms and parameters will generate right here.</p>
+      <a class="btn" href="#">Coming Soon</a>
+    </div>
+    
+  </div>
+</section>
+
+<footer>
+  <h3>KunalTheDev Apps</h3>
+  <p>High-Performance Mobile Architectures</p>
+  <p style="margin-top:12px; font-size:0.8rem;">&copy; 2026 KunalTheDev Apps. All Rights Reserved.</p>
+</footer>
+
+<script>
+// High-efficiency layout particle background generator
+const frag = document.createDocumentFragment();
+const particleCount = window.innerWidth < 768 ? 20 : 40; // Context-aware optimization
+for(let i=0; i<particleCount; i++){
+  const e = document.createElement('div');
+  e.className = 'p';
+  const size = 2 + Math.random() * 4;
+  e.style.width = e.style.height = size + 'px';
+  e.style.transform = `translate(${Math.random() * 100}vw, 105vh)`;
+  e.style.animationDuration = (10 + Math.random() * 15) + 's';
+  e.style.animationDelay = (Math.random() * 10) + 's';
+  frag.appendChild(e);
+}
+document.body.appendChild(frag);
+
+// Super smooth modern Spotlight hover effect matrix tracking
+document.querySelectorAll('.card').forEach(card => {
+  let frameId = null;
+  card.addEventListener('mousemove', e => {
+    if (frameId) return;
+    frameId = requestAnimationFrame(() => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Map properties cleanly to CSS vectors
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+      
+      // Subtle elegant 3D transformation matrix tilt
+      const rotX = -((y - rect.height / 2) / rect.height) * 8;
+      const rotY = ((x - rect.width / 2) / rect.width) * 8;
+      card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
+      frameId = null;
+    });
+  }, {passive: true});
+
+  card.addEventListener('mouseleave', () => {
+    if (frameId) { cancelAnimationFrame(frameId); frameId = null; }
+    card.style.transform = '';
+  });
 });
 </script>
-</body></html>
+</body>
+</html>
