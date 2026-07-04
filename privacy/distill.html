@@ -17,67 +17,90 @@ footer{text-align:center;padding:40px;background:rgba(0,0,0,.25);margin-top:50px
 .p{position:fixed;border-radius:50%;background:#fff;opacity:.25;z-index:-1;animation:r linear infinite}@keyframes r{from{transform:translateY(105vh)}to{transform:translateY(-10vh)}}
 </style></head><body>
 <div class="blob b1"></div><div class="blob b2"></div>
-<header><h1>Distill</h1><p>Privacy Policy</p><p>Last Updated: July 5, 2026</p></header>
+<header><h1>Distill</h1><p>Privacy Policy</p><p>Last Updated/Effective Date: July 5, 2026</p></header>
 <div class="wrap"><div class="box">
 <div class="notice">Welcome to <strong>Distill</strong>, your all-in-one voice inbox application. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information while using our application.</div>
 <section><h2>1. Introduction</h2>
 <p>Distill ("the App") respects your privacy. This policy explains what information we collect, why we collect it, how we use it, and your rights.</p></section>
 
+<section><h2>1. Introduction</h2>
+<p>Distill ("the App") respects your privacy. This Privacy Policy explains what information we collect, why we collect it, how we use it, and your rights.</p></section>
+
 <section><h2>2. Information We Collect</h2>
+<h3>A. Voice and Audio Data</h3>
 <ul>
-<li>Device model, Android version, app version</li>
-<li>Crash reports and diagnostics</li>
-<li>Performance and analytics data</li>
-<li>Network status</li>
-<li>Voice recordings and speech transcripts only when you choose to use voice features</li>
-<li>Email address only if you voluntarily provide them (such as authentication and contacting support)</li>
-</ul></section>
+<li><strong>Local Processing (FOSS Engines):</strong> If you select "Whisper Local," "Vosk Offline," or "PocketSphinx," your audio is processed entirely on your device. We do not upload this audio to any servers.</li>
+<li><strong>Cloud Processing (Groq Whisper / Google Cloud):</strong> If you select a cloud-based engine, your audio is securely transmitted to Groq Inc. or Google Cloud solely for transcription and analysis. Audio is not retained for model training.</li>
+</ul>
+<h3>B. Calendar Data</h3>
+<ul>
+<li>Distill may request calendar access to create calendar events that you choose to create using voice.</li>
+<li>We only write events to calendars you specify and do not read existing events except to identify the selected calendar for syncing.</li>
+</ul>
+<h3>C. Authentication Data</h3>
+<ul>
+<li>If you sign in with Google/Firebase Authentication, we collect basic profile information such as your email address and display name to sync preferences and premium status across devices.</li>
+</ul>
+<h3>D. Device & Usage Information</h3>
+<ul>
+<li>Device model, Android version, app version, network status.</li>
+<li>Crash reports, diagnostics, and anonymous analytics.</li>
+<li>AdMob may collect device identifiers and approximate location for personalized or non-personalized advertising.</li>
+</ul>
+</section>
 
 <section><h2>3. Why We Collect Data</h2>
 <ul>
-<li>Provide speech-to-text and AI features</li>
-<li>Generate summaries and responses</li>
-<li>Improve app performance and reliability</li>
-<li>Fix bugs and prevent abuse</li>
-<li>Provide customer support</li>
+<li>Provide speech-to-text, AI transcription, summaries, and productivity features.</li>
+<li>Create and sync calendar events.</li>
+<li>Manage authentication, premium subscriptions, and preferences.</li>
+<li>Improve performance, reliability, speed, and accuracy.</li>
+<li>Prevent abuse, fix bugs, and provide customer support.</li>
 </ul></section>
 
-<section><h2>4. Permissions</h2>
+<section><h2>4. Data Storage and Security</h2>
 <ul>
-<li>Internet – required for AI and speech processing.</li>
-<li>Network State – checks connectivity.</li>
-<li>Microphone - requied when using advanced speech to text features.</li>
+<li>Local data such as distilled items, summaries, and offline files are stored on your device.</li>
+<li>If you sign in, selected app data may be backed up using Firebase to prevent data loss.</li>
+<li>We use HTTPS encryption, access controls, and industry-standard safeguards to protect your information.</li>
+<li>Audio and transcripts are deleted when you delete the associated item unless you choose to keep them.</li>
 </ul></section>
 
-<section><h2>5. Third-Party Services</h2>
-<p>We use trusted providers such as Google Firebase (Analytics/Crashlytics/Firebase/Authentication), AdMob, Gemini Speech to Text and Groq for AI processing and Speech to Text. They process only the information necessary to provide requested features under their own privacy policies.</p></section>
+<section><h2>5. Permissions</h2>
+<ul>
+<li>Microphone – required for speech recognition.</li>
+<li>Calendar – required only to create calendar events you request.</li>
+<li>Internet – required for cloud AI features and syncing.</li>
+<li>Network State – checks connectivity.</li>
+</ul></section>
 
-<section><h2>6. Data Sharing</h2>
-<p>We do not sell your personal information. Information is shared only with service providers required to operate the app.</p></section>
+<section><h2>6. Third-Party Services</h2>
+<p>We use trusted providers including Firebase (Authentication, Analytics, Crashlytics, Database), Google AdMob, Groq, and Google Cloud/Gemini Speech-to-Text. These providers process only the information required to deliver requested features under their own privacy policies.</p></section>
 
-<section><h2>7. Data Retention</h2>
-<p>We retain data only for as long as necessary to provide the service, comply with legal obligations, or resolve disputes. Audio and transcripts are deleted after deleting item, unless you choose to save the item..</p></section>
+<section><h2>7. Data Sharing</h2>
+<p>We do not sell your personal information. Data is shared only with service providers necessary to operate the App.</p></section>
 
-<section><h2>8. Security</h2>
-<p>We use HTTPS encryption, access controls, and industry-standard safeguards to protect your information.</p></section>
+<section><h2>8. Your Choices and Rights</h2>
+<ul>
+<li>You may revoke microphone or calendar permissions through your device settings.</li>
+<li>You may choose offline speech engines so your voice never leaves your device.</li>
+<li>You may request access, correction, or deletion of your personal information.</li>
+<li>You can delete individual items or clear app data at any time.</li>
+</ul></section>
 
-<section><h2>9. Your Rights</h2>
-<p>You may request access, correction, or deletion of your personal information by contacting us at the contact information given at the end.</p></section>
+<section><h2>9. Children's Privacy</h2>
+<p>Distill is not intended for children under 13 or the minimum legal age in your jurisdiction.</p></section>
 
-<section><h2>10. Children's Privacy</h2>
-<p>The app is not intended for children under 13 or the minimum legal age in your jurisdiction.</p></section>
+<section><h2>10. International Processing</h2>
+<p>Your information may be processed on servers located in countries other than your own depending on the services you use.</p></section>
 
-<section><h2>11. International Processing</h2>
-<p>Your information may be processed on servers located in countries other than your own depending on the services used.</p></section>
+<section><h2>11. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a revised "Last Updated" date.</p></section>
 
-<section><h2>12. Changes</h2>
-<p>We may update this Privacy Policy. Updates will be posted on this page with a revised "Last Updated" date.</p></section>
-
-<section><h2>13. Contact</h2>
+<section><h2>12. Contact</h2>
 <p>Email: <strong>kunalthedev@zohomail.com</strong></p></section>
 
-<section><h2>14. Consent</h2>
+<section><h2>13. Consent</h2>
 <p>By using Distill, you acknowledge that you have read and agree to this Privacy Policy.</p></section>
-
 <footer>© 2026 Distill. All rights reserved.</footer>
 </body></html>
